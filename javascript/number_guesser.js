@@ -16,11 +16,20 @@ function guessChecker() {
   }
 }
 
+function guessValidator() {
+  if (isNaN(guess)) {
+    let message = 'Invalid Guess'
+    $('#message').text(message);
+  } else {
+    guessChecker();
+  }
+}
+
 $(document).ready( () => {
   $('#submit-button').on('click', () => {
     guess = parseInt($('#guess-field').val(), 10);
     $('#last-guess').text(`Your most recent guess: ${guess}`);
-    guessChecker();
+    guessValidator();
   })
 
   $('#clear-button').on('click', () => {

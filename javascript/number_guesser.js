@@ -1,4 +1,6 @@
-const randomNumber = Math.floor(Math.random() * 100) + 1;
+let maxNumber = 100;
+let minNumber = 1;
+const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 let guess = null;
 
 function guessChecker() {

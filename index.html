@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <title>Number Guesser</title>
 </head>
@@ -9,11 +10,11 @@
 <body>
   <h1>Number Guesser</h1>
   <h4>Guess a random number:</h4>
-  <form>
-    <input type='text'>
-    <button type='reset'>Clear Form</button><button type='submit'>Submit Answer</button>
-  </form>
 
+  <input type='text' id='guess-field' placeholder='Enter your guess here'><br>
+  <button id='submit-button' type='submit'>Submit Answer</button><button type='reset'>Clear Form</button>
+
+  <h4 id='last-guess'></h4>
 </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"

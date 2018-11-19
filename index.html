@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <title>Number Guesser</title>
 </head>
 
 <body>
   <h1>Number Guesser</h1>
-  <script src="javascript/number_guesser.js"></script>
+  <h4>Guess a random number:</h4>
+
+  <input type='number' id='guess-field' placeholder='Enter your guess here'><br>
+  <button id='submit-button' type='submit'>Submit Answer</button><button id='clear-button' type='reset'>Clear Form</button><br>
+  <button id='reset-button'>Reset Game</button>
+
+  <h4 id='last-guess'></h4>
+  <h1 id='message'></h1>
 </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script src="javascript/number_guesser.js"></script>
 </html>

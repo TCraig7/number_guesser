@@ -1,24 +1,39 @@
-const randomNumber = Math.floor(Math.random() * 100) + 1;
+let maxNumber = 100;
+let minNumber = 1;
+const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 let guess = null;
 
 function guessChecker() {
   if (guess === randomNumber) {
-    message = 'BOOM!';
+    let message = 'BOOM!';
     $('#message').text(message);
   } else if (guess > randomNumber) {
-    message = 'That is too high';
+    let message = 'That is too high';
     $('#message').text(message);
   } else {
-    message = 'That is too low'
+    let message = 'That is too low'
     $('#message').text(message);
+  }
+}
+
+function guessValidator() {
+  if (isNaN(guess)) {
+    let message = 'Invalid guess, please input a number.'
+    $('#message').text(message);
+  } else if (guess < minNumber || guess > maxNumber) {
+    let message = `Please choose a number between ${minNumber} and ${maxNumber}.`
+    $('#message').text(message)
+  } else {
+    guessChecker();
   }
 }
 
 $(document).ready( () => {
   $('#submit-button').on('click', () => {
     guess = parseInt($('#guess-field').val(), 10);
+    $('#guess-field').val("");
     $('#last-guess').text(`Your most recent guess: ${guess}`);
-    guessChecker();
+    guessValidator();
   })
 
   $('#clear-button').on('click', () => {

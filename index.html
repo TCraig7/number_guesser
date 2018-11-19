@@ -3,20 +3,26 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
 
   <title>Number Guesser</title>
 </head>
 
 <body>
-  <h1>Number Guesser</h1>
-  <h4>Guess a random number:</h4>
+  <header>
+    <h1>Number Guesser</h1>
+  </header>
 
-  <input type='number' id='guess-field' placeholder='Enter your guess here'><br>
-  <button id='submit-button' type='submit'>Submit Answer</button><button id='clear-button' type='reset'>Clear Form</button><br>
-  <button id='reset-button'>Reset Game</button>
+  <h3>Set Guess Range:</h3>
+  <input type='number' id='min-field' placeholder='1'><input type='number' id='max-field' placeholder='100'><br><br>
+
+  <input type='number' id='guess-field' placeholder='Enter your guess'><br>
+  <button id='submit-button' type='submit'>Guess</button><button id='clear-button' type='reset'>Clear</button><br>
 
   <h4 id='last-guess'></h4>
   <h1 id='message'></h1>
+  <br><br>
+  <button id='reset-button'>Reset Game</button>
 </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"

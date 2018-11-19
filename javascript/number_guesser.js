@@ -21,4 +21,8 @@ $(document).ready( () => {
     $('#last-guess').text(`Your most recent guess: ${guess}`);
     guessChecker();
   })
+
+  $('#reset-button').on('click', () => {
+    $('#guess-field').val("");
+  })
 });

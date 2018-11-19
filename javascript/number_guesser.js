@@ -18,8 +18,11 @@ function guessChecker() {
 
 function guessValidator() {
   if (isNaN(guess)) {
-    let message = 'Invalid Guess'
+    let message = 'Invalid guess, please input a number.'
     $('#message').text(message);
+  } else if (guess < minNumber || guess > maxNumber) {
+    let message = `Please choose a number between ${minNumber} and ${maxNumber}.`
+    $('#message').text(message)
   } else {
     guessChecker();
   }

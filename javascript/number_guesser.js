@@ -31,6 +31,7 @@ function guessValidator() {
 $(document).ready( () => {
   $('#submit-button').on('click', () => {
     guess = parseInt($('#guess-field').val(), 10);
+    $('#guess-field').val("");
     $('#last-guess').text(`Your most recent guess: ${guess}`);
     guessValidator();
   })

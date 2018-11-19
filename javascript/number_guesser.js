@@ -2,7 +2,6 @@ const randomNumber = Math.floor(Math.random() * 100) + 1;
 let guess = null;
 
 function guessChecker() {
-
   if (guess === randomNumber) {
     message = 'BOOM!';
     $('#message').text(message);
@@ -22,7 +21,11 @@ $(document).ready( () => {
     guessChecker();
   })
 
-  $('#reset-button').on('click', () => {
+  $('#clear-button').on('click', () => {
     $('#guess-field').val("");
+  })
+
+  $('#reset-button').on('click', () => {
+    window.location.reload();
   })
 });

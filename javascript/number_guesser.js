@@ -35,15 +35,25 @@ function guessChecker() {
 }
 
 function playAgain() {
+  // function to allow the player to play the game again;
   minNumber = minNumber - 10;
+  // sets the minNumber variable to minNumber minus 10;
   maxNumber = maxNumber + 10;
+  // sets the minNumber variable to minNumber plus 10;
   $('#last-guess').text("");
+  // resets the last guess input field so that the last guess is now longer showing;
   $('#user-range').text(`${minNumber} through ${maxNumber}`);
+  // creates the message that shows the user's range;
   $('#message').text("");
+  // prints the user's range to the page;
   randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+  // sets the random number within the new range;
   $('#play-again').slideUp();
+  // jquery to slide the play again button up so it no longer shows;
   $('#your-range').slideUp();
+  // sides the old range up so it no longer shows;
   $('#won-your-range').slideDown();
+  // slides the new range down; 
 }
 
 function guessValidator() {

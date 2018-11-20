@@ -13,16 +13,25 @@
     <h1>Number Guesser</h1>
   </header>
 
-  <h3>Set Guess Range:</h3>
-  <input type='number' id='min-field' placeholder='1'><input type='number' id='max-field' placeholder='100'><br><br>
+  <div class='range-container'>
+    <h3>Your Range:</h3>
+    <p id='user-range'></p>
+  </div>
+
+  <div class='range-selector-container'>
+    <h3>Set Guess Range:</h3>
+    <input type='number' id='min-field' placeholder='1'><input type='number' id='max-field' placeholder='100'>
+    <button type='submit' id='range-submit'>Submit</button>
+  </div>
 
   <input type='number' id='guess-field' placeholder='Enter your guess'><br>
-  <button id='submit-button' type='submit'>Guess</button><button id='clear-button' type='reset'>Clear</button><br>
+  <button type='submit' id='submit-button'>Guess</button><button id='clear-button' type='reset'>Clear</button><br>
 
   <h4 id='last-guess'></h4>
   <h1 id='message'></h1>
-  <br><br>
-  <button id='reset-button'>Reset Game</button>
+
+  <button id='reset-button'>Reset Game</button><br>
+  <button id='play-again' style='display: none'>Play Again</button>
 </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"

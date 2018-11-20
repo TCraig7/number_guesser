@@ -1,12 +1,13 @@
 let maxNumber = 100;
 let minNumber = 1;
-const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+let randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 let guess = null;
 
 function guessChecker() {
   if (guess === randomNumber) {
     let message = 'BOOM!';
     $('#message').text(message);
+    $('#play-again').slideDown('slow');
   } else if (guess > randomNumber) {
     let message = 'That is too high';
     $('#message').text(message);
@@ -14,6 +15,16 @@ function guessChecker() {
     let message = 'That is too low'
     $('#message').text(message);
   }
+}
+
+function playAgain() {
+  minNumber = minNumber - 10;
+  maxNumber = maxNumber + 10;
+  $('#last-guess').text("");
+  $('#user-range').text(`${minNumber} through ${maxNumber}`);
+  $('#message').text("");
+  randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+  $('#play-again').slideUp();
 }
 
 function guessValidator() {
@@ -29,7 +40,18 @@ function guessValidator() {
 }
 
 $(document).ready( () => {
+  $('#user-range').text(`${minNumber} through ${maxNumber}`)
+
+  $('#range-submit').on('click', () => {
+    minNumber = parseInt($('#min-field').val(), 10) || minNumber;
+    maxNumber = parseInt($('#max-field').val(), 10) || maxNumber;
+    randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    $('.range-selector-container').slideUp();
+    $('#user-range').text(`${minNumber} through ${maxNumber}`)
+  })
+
   $('#submit-button').on('click', () => {
+    $('.range-selector-container').slideUp();
     guess = parseInt($('#guess-field').val(), 10);
     $('#guess-field').val("");
     $('#last-guess').text(`Your most recent guess: ${guess}`);
@@ -41,6 +63,10 @@ $(document).ready( () => {
   })
 
   $('#reset-button').on('click', () => {
-    window.location.reload();
+    location.reload();
+  })
+
+  $('#play-again').on('click', () => {
+    playAgain();
   })
 });

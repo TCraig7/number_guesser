@@ -78,37 +78,55 @@ function guessValidator() {
 }
 
 $(document).ready( () => {
+  // starts the jquery for the page;
   $('#user-range').text(`${minNumber} through ${maxNumber}`)
+  // prints the message to the page;
 
   $('#range-submit').on('click', () => {
+    //  finds the range submit id for the submit button and tells it to do the following when clicked on;
     minNumber = parseInt($('#min-field').val(), 10) || minNumber;
+    // sets the minNumber variable to the new value or to set it to the default;
     maxNumber = parseInt($('#max-field').val(), 10) || maxNumber;
+    // sets the maxNumber variable to the new value or to set it to the default;
     randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    // sets the random number;
     $('.range-selector-container').slideUp();
+    // slides the range selector up once the range has been selected;
     $('#user-range').text(`${minNumber} through ${maxNumber}`)
     // prints the message to the page;
   })
 
   $('#submit-button').on('click', () => {
+    // finds the button with the id 'submit button' and tells it to do the following when clicked;
     $('.range-selector-container').slideUp();
+    // slides the range selector options up when the user makes their first guess;
     guess = parseInt($('#guess-field').val(), 10);
+    // sets the guess variable to the user's guess and parses it into a number;
     $('#guess-field').val("");
+    // resets the guess input field so that it does not show the previous guess;
     $('#last-guess-text').text('Your last guess was');
     // prints the message to the page;
     $('#last-guess-number').text(guess);
     // prints the message to the page;
     guessValidator();
+    // runs the guess validator function to verify user's guess;
   })
 
   $('#clear-button').on('click', () => {
+    // finds the button with the "clear button" id and tell it to do the following when clicked;
     $('#guess-field').val("");
+    // clears the guess field value;
   })
 
   $('#reset-button').on('click', () => {
+    // finds the button with the 'reset button' id and tell it to do the following when clicked;
     location.reload();
+    // reloads the page when the reset button is clicked;
   })
 
   $('#play-again').on('click', () => {
+    // finds the button with the 'play again' id and tell it to do the following when clicked;
     playAgain();
+    // triggers the play again function so the user can play again;
   })
 });

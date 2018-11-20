@@ -10,7 +10,7 @@ let guess = null;
 // sets the variable guess so that it can be changed later by the user's guess;
 
 function guessChecker() {
-  // my 'function example' lines are creating functions.
+  // function to check whether the guessed number matches the randomly generated number;
   if (guess === randomNumber) {
     // starts the conditional. checks to see if the guess is equal to the random number;
     let message = 'BOOM!';
@@ -53,18 +53,27 @@ function playAgain() {
   $('#your-range').slideUp();
   // sides the old range up so it no longer shows;
   $('#won-your-range').slideDown();
-  // slides the new range down; 
+  // slides the new range down;
 }
 
 function guessValidator() {
+  // function to verify if user guess is a valid number;
   if (isNaN(guess)) {
+    // conditional branch that checks to see if the user guess is not a number;
     let message = 'Invalid guess, please input a number.'
+    // sets message variable to 'Invalid guess, please input a number';
     $('#message').text(message);
+    // prints the message to the page;
   } else if (guess < minNumber || guess > maxNumber) {
+    // conditional branch that checks to see if the number is within the range;
     let message = `Please choose a number between ${minNumber} and ${maxNumber}.`
+    // sets message variable to make the error message about staying in the range;
     $('#message').text(message)
+    // prints the message to the page;
   } else {
+    // conditional branch that triggers for anything other than the two previous branches;
     guessChecker();
+    // runs the guessChecker function;
   }
 }
 
@@ -77,6 +86,7 @@ $(document).ready( () => {
     randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
     $('.range-selector-container').slideUp();
     $('#user-range').text(`${minNumber} through ${maxNumber}`)
+    // prints the message to the page;
   })
 
   $('#submit-button').on('click', () => {
@@ -84,7 +94,9 @@ $(document).ready( () => {
     guess = parseInt($('#guess-field').val(), 10);
     $('#guess-field').val("");
     $('#last-guess-text').text('Your last guess was');
+    // prints the message to the page;
     $('#last-guess-number').text(guess);
+    // prints the message to the page;
     guessValidator();
   })
 

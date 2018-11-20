@@ -29,10 +29,14 @@ function guessValidator() {
 }
 
 $(document).ready( () => {
+  $('#user-range').text(`${minNumber} - ${maxNumber}`)
+
   $('#range-submit').on('click', () => {
-    newMinNumber = parseInt($('#min-field').val(), 10) || minNumber;
-    newMaxNumber = parseInt($('#max-field').val(), 10) || maxNumber;
-    randomNumber = Math.floor(Math.random() * (newMaxNumber - newMinNumber + 1)) + newMinNumber
+    minNumber = parseInt($('#min-field').val(), 10) || minNumber;
+    maxNumber = parseInt($('#max-field').val(), 10) || maxNumber;
+    randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    $('.range-selector-container').slideUp();
+    $('#user-range').text(`${minNumber} - ${maxNumber}`)
   })
 
   $('#submit-button').on('click', () => {
@@ -47,6 +51,6 @@ $(document).ready( () => {
   })
 
   $('#reset-button').on('click', () => {
-    window.location.reload();
+    location.reload();
   })
 });

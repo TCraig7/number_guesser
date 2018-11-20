@@ -1,6 +1,6 @@
 let maxNumber = 100;
 let minNumber = 1;
-const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+let randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 let guess = null;
 
 function guessChecker() {
@@ -29,6 +29,12 @@ function guessValidator() {
 }
 
 $(document).ready( () => {
+  $('#range-submit').on('click', () => {
+    newMinNumber = parseInt($('#min-field').val(), 10) || minNumber;
+    newMaxNumber = parseInt($('#max-field').val(), 10) || maxNumber;
+    randomNumber = Math.floor(Math.random() * (newMaxNumber - newMinNumber + 1)) + newMinNumber
+  })
+
   $('#submit-button').on('click', () => {
     guess = parseInt($('#guess-field').val(), 10);
     $('#guess-field').val("");

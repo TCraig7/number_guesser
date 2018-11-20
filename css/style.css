@@ -1,0 +1,82 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 2px 7px 0 rgba(0,0,0,0.19);
+  padding: 10px 65px;
+  font-size: 15px;
+  margin: 10px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: #404041;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+.header {
+  background-color: #404041;
+  height: 8rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 8rem;
+}
+
+.grey {
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+.pink {
+  background-color: #EB008B;
+  color: #FFFFFF;
+}
+
+.input-field {
+  border-radius: 8px;
+  padding: 10px 65px;
+  border-color: #f2f2f2;
+  font-size: 1rem;
+  text-align: center;
+  margin: 5px;
+}
+
+#first-title {
+  color: #ED458B;
+  display: inline;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+#second-title {
+  color: #E6E7E8;
+  display: inline;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+#user-range {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+#guess-field {
+  margin-top: 25px;
+}
+
+#last-guess-number {
+  font-size: 10rem;
+  color: #ED458B;
+}
+
+#message {
+  font-size: 1.5rem;
+  margin: 10px;
+}

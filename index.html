@@ -1,38 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Number Guesser</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
 
-  <title>Number Guesser</title>
-</head>
+  <body>
+    <div class='header'>
+      <h1 id='first-title'>Number</h1><h1 id='second-title'> Guesser</h1>
+    </div>
 
-<body>
-  <header>
-    <h1>Number Guesser</h1>
-  </header>
+    <div class='range-container'>
+      <h3 id='your-range'>Your Range:</h3>
+      <h3 id='won-your-range' style='display: none'>Good job! Your new range is:</h3>
+      <p id='user-range'></p>
+    </div>
 
-  <div class='range-container'>
-    <h3>Your Range:</h3>
-    <p id='user-range'></p>
-  </div>
+    <div class='range-selector-container'>
+      <h3>Set Guess Range:</h3>
+      <input type='number' class='input-field' id='min-field' placeholder='1'><input type='number' class='input-field' id='max-field' placeholder='100'><br>
+      <button type='submit' class='grey' id='range-submit'>Set Range</button>
+    </div>
 
-  <div class='range-selector-container'>
-    <h3>Set Guess Range:</h3>
-    <input type='number' id='min-field' placeholder='1'><input type='number' id='max-field' placeholder='100'>
-    <button type='submit' id='range-submit'>Submit</button>
-  </div>
+    <input type='number' class='input-field' id='guess-field' placeholder='Enter your guess'><br>
+    <button type='submit' class='pink' id='submit-button'>Guess</button><button class='grey' id='clear-button' type='reset'>Clear</button><br>
 
-  <input type='number' id='guess-field' placeholder='Enter your guess'><br>
-  <button type='submit' id='submit-button'>Guess</button><button id='clear-button' type='reset'>Clear</button><br>
+    <h4 id='last-guess-text'></h4>
+    <h4 id='last-guess-number'></h4>
+    <p id='message'></p>
 
-  <h4 id='last-guess'></h4>
-  <h1 id='message'></h1>
+    <button class='grey' id='reset-button'>Reset Game</button><br>
+    <button class='pink' id='play-again' style='display: none'>Play Again</button>
+  </body>
 
-  <button id='reset-button'>Reset Game</button><br>
-  <button id='play-again' style='display: none'>Play Again</button>
-</body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

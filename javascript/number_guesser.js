@@ -25,6 +25,8 @@ function playAgain() {
   $('#message').text("");
   randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
   $('#play-again').slideUp();
+  $('#your-range').slideUp();
+  $('#won-your-range').slideDown();
 }
 
 function guessValidator() {
@@ -54,7 +56,8 @@ $(document).ready( () => {
     $('.range-selector-container').slideUp();
     guess = parseInt($('#guess-field').val(), 10);
     $('#guess-field').val("");
-    $('#last-guess').text(`Your most recent guess: ${guess}`);
+    $('#last-guess-text').text('Your last guess was');
+    $('#last-guess-number').text(guess);
     guessValidator();
   })
 
